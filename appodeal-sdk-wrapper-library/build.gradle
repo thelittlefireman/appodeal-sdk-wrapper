@@ -21,10 +21,6 @@ android {
         versionName artifactVersion
         consumerProguardFiles 'proguard-rules.pro'
         multiDexEnabled true
-        ndk {
-            abiFilters "armeabi-v7a", "x86"
-        }
-
     }
     productFlavors {
         normal {  }

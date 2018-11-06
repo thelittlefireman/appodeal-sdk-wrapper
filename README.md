@@ -3,6 +3,8 @@
 ~~Due to the increased fine grained configuration of Appodeal last SDK releases that requires manual edition of AndroidManifest this repo is no longer maitained.~~
 
 
+BIG Thanks to the original Author : https://github.com/pamartineza/appodeal-sdk-wrapper
+
 ## appodeal-sdk-wrapper
 Get Appodeal SDK adding just a Gradle dependency line :)
 
@@ -14,42 +16,16 @@ The aim of this repository is to simplify updating Appodeal SDK or switching amo
 
 ####Please read carefully:
 
-1- Aar's dependencies **are NOT** included (I haven't been capable of packaging successfully the .aar's' whithin an Android Library, let me know if you know how to do it) so you should manually download it from Appodeal website and import the .aar's' to your project. (Note: aars are also available in this repo in the folder aars)
-```groovy
-compile project(':adcolony-sdk-3.1.2')
-compile project(':facebook-audience-network-4.22.0')
-```
-2- Google Play Services **are NOT** included nor support libraries, you must add them in your app dependencies section and don't forget to add the manifest entries for ads:
-```groovy
-compile 'com.android.support:recyclerview-v7:a.b.c'
-compile 'com.google.android.gms:play-services-ads:r.s.t'
-compile 'com.google.android.gms:play-services-location:r.s.t'
-```
-```xml
-<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-
-<activity android:name="com.google.android.gms.ads.AdActivity"
-      android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-      android:theme="@android:style/Theme.Translucent" />	
-```
-3- AndroidManifest permissions **are NOT** included to allow you to choose what fits best for your pourposes, check Appodeal docs for further references
-
-```xml
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<uses-permission android:name="android.permission.INTERNET" />
-
-<!-- Optional -->
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-```
+// TODO
 
 ##How to add to your project:
 
 This project has been built using Jitpack.io
-[![](https://jitpack.io/v/pamartineza/appodeal-sdk-wrapper.svg)](https://jitpack.io/#pamartineza/appodeal-sdk-wrapper)
+[![](https://jitpack.io/v/thelittlefireman/appodeal-sdk-wrapper.svg)](https://jitpack.io/#thelittlefireman/appodeal-sdk-wrapper)
 
 Releases available using this repo:
+* 2.4.8-beta (Nov 06, 2018)
+-> com.github.thelittlefireman:appodeal-sdk-wrapper:2.4.8-beta.0
 * 2.0.2-beta (May 31, 2017)
 -> com.github.pamartineza:appodeal-sdk-wrapper:2.0.2-beta.0 (aars: facebook-audience-network-4.22.0, adcolony-sdk-3.1.2')
 * 2.0.0-beta (April 12, 2017)
@@ -87,12 +63,11 @@ allprojects {
 ```	
 	
 	
-Add to your app build.gradle, check Jitpack badge to get current release numbers [![](https://jitpack.io/v/pamartineza/appodeal-sdk-wrapper.svg)](https://jitpack.io/#pamartineza/appodeal-sdk-wrapper)
+Add to your app build.gradle, check Jitpack badge to get current release numbers [![](https://jitpack.io/v/thelittlefireman/appodeal-sdk-wrapper.svg)](https://jitpack.io/#thelittlefireman/appodeal-sdk-wrapper)
 ```groovy
 dependencies {
-        compile 'com.github.pamartineza:appodeal-sdk-wrapper:x.y.z.version'
+        compile 'com.github.thelittlefireman:appodeal-sdk-wrapper:x.y.z.version'
 }
 ```	
 
 ####Please star :star: this project if you find it useful :)
-####Follow me on Twitter to get updates :+1: [@pamartineza](https://twitter.com/pamartineza)
