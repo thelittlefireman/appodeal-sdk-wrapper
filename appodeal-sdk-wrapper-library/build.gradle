@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.4.8-beta.1'
+    artifactVersion = '2.4.8-beta.2'
 }
 
 group='com.github.thelittlefireman'
