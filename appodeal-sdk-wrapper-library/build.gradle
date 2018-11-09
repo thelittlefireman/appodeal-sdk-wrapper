@@ -2,38 +2,15 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.4.8-beta.4'
-}
-
-group='com.github.thelittlefireman'
-version = artifactVersion
-
-if (android.productFlavors.size() > 0) {
-    android.libraryVariants.all { variant ->
-        if (variant.name.toLowerCase().contains("debug")) {
-            return
-        }
-
-        def bundleTask = tasks["bundle${variant.name.capitalize()}"]
-
-        artifacts {
-            archives(bundleTask.archivePath) {
-                classifier variant.flavorName
-                builtBy bundleTask
-                name = project.name
-            }
-        }
-
-    }
+    artifactVersion = '2.4.8-beta.5'
 }
 
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
-    flavorDimensions "default"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 28
         versionCode 1
         versionName artifactVersion
@@ -41,11 +18,10 @@ android {
         multiDexEnabled true
     }
     defaultPublishConfig "normalRelease"
+    flavorDimensions "default"
     productFlavors {
-        normal {  }
-        optional {
-            versionName artifactVersion+'_optional'
-        }
+        normal { dimension "default" }
+        optional { dimension "default" }
     }
 }
 
@@ -53,10 +29,23 @@ allprojects {
     repositories {
         jcenter { url "http://jcenter.bintray.com/" }
         google()
+        maven {
+            url 'https://maven.google.com/'
+        }
+        jcenter()
         flatDir {
             dirs 'libs-aar'
         }
     }
+}
+
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.javaDirectories
+}
+
+artifacts {
+    archives sourcesJar
 }
 
 dependencies {
@@ -68,8 +57,8 @@ dependencies {
     optionalImplementation fileTree(dir: 'libs-ops', include: ['*.jar'])
 
     // --- Native libs ---
-    implementation 'com.google.android.gms:play-services-ads:15.0.0'
-    implementation 'com.google.android.gms:play-services-location:15.0.0'
+    implementation 'com.google.android.gms:play-services-ads:17.0.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     // --- AAR ---
     implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
@@ -89,4 +78,25 @@ dependencies {
     implementation name: 'mobvista-8.11.3-videojs', ext: 'aar'
     implementation name: 'ogury-3.0.13', ext: 'aar'
 
+}
+
+group='com.github.thelittlefireman'
+version = artifactVersion
+
+if (android.productFlavors.size() > 0) {
+    android.libraryVariants.all { variant ->
+        if (variant.name.toLowerCase().contains("debug")) {
+            return
+        }
+
+        def bundleTask = tasks["bundle${variant.name.capitalize()}Aar"]
+
+        artifacts {
+            archives(bundleTask.archivePath) {
+                classifier variant.flavorName
+                builtBy bundleTask
+                name = project.name
+            }
+        }
+    }
 }
