@@ -7,10 +7,9 @@
 
     <application>
         <!-- Flurry-ads -->
-        <!--suppress AndroidDomInspection -->
         <activity android:name="com.flurry.android.FlurryFullscreenTakeoverActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize">
-        </activity>
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- End Flurry-ads -->
     </application>
 

@@ -2,7 +2,8 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.4.8-beta.5'
+    artifactVersion = '2.4.9.0'
+    aarMobVistaVersion = '9.0.0'
 }
 
 android {
@@ -63,19 +64,19 @@ dependencies {
     // --- AAR ---
     implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
     implementation name: 'adcolony-3.3.4', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-alphab', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-common', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-interstitial', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-interstitialvideo', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-mvdownloads', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-mvjscommon', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-mvnative', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-nativeex', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-playercommon', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-reward', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-videocommon', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-videofeeds', ext: 'aar'
-    implementation name: 'mobvista-8.11.3-videojs', ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-alphab", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-common", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-interstitial", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-interstitialvideo", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-mvdownloads", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-mvjscommon", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-mvnative", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-nativeex", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-playercommon", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-reward", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-videocommon", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-videofeeds", ext: 'aar'
+    implementation name: "mobvista-$aarMobVistaVersion-videojs", ext: 'aar'
     implementation name: 'ogury-3.0.13', ext: 'aar'
 
 }

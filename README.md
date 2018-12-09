@@ -16,7 +16,16 @@ The aim of this repository is to simplify updating Appodeal SDK or switching amo
 
 ####Please read carefully:
 
-// TODO
+Please set this carefully on your project
+```xml
+<manifest>
+    <application>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="[ADMOB_APP_ID]"/>
+    </application>
+</manifest>
+```
 
 ##How to add to your project:
 
@@ -24,7 +33,9 @@ This project has been built using Jitpack.io
 [![](https://jitpack.io/v/thelittlefireman/appodeal-sdk-wrapper.svg)](https://jitpack.io/#thelittlefireman/appodeal-sdk-wrapper)
 
 Releases available using this repo:
-* 2.4.8-beta (Nov 06, 2018)
+* 2.4.9.0 (Dec 09, 2018)
+-> com.github.thelittlefireman:appodeal-sdk-wrapper:2.4.9.0
+* 2.4.8-beta.5 (Nov 06, 2018)
 -> com.github.thelittlefireman:appodeal-sdk-wrapper:2.4.8-beta.0
 * 2.0.2-beta (May 31, 2017)
 -> com.github.pamartineza:appodeal-sdk-wrapper:2.0.2-beta.0 (aars: facebook-audience-network-4.22.0, adcolony-sdk-3.1.2')
