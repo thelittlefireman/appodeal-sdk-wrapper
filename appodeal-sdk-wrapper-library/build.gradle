@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.4.9.2'
+    artifactVersion = '2.4.9.3'
     aarMobVistaVersion = '9.0.0'
 }
 
@@ -52,13 +52,15 @@ artifacts {
 dependencies {
 
     implementation "com.android.support:multidex:1.0.3"
+    implementation "com.android.support:recyclerview-v7:28.0.0"
+    implementation "com.android.support:support-v4:28.0.0"
 
     //Libs folder
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     optionalImplementation fileTree(dir: 'libs-ops', include: ['*.jar'])
 
     // --- Native libs ---
-    implementation 'com.google.android.gms:play-services-ads:17.0.0'
+    implementation 'com.google.android.gms:play-services-ads:17.1.2'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
 
     // --- AAR ---
