@@ -15,6 +15,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
 # AdMediator
 -keep class com.admediator.** { *; }
 
@@ -138,6 +139,7 @@
 
 # Tapjoy
 -keep class com.tapjoy.** { *; }
+-keep class com.moat.** { *; }
 -dontwarn com.tapjoy.**
 
 # IronSource
@@ -171,6 +173,9 @@
 -keep class com.moat.** {*;}
 -dontwarn com.moat.**
 -keep class com.integralads.avid.library.* {*;}
+
+# Ogury
+-dontwarn io.presage.**
 
 # Google
 -keep class com.google.android.gms.common.GooglePlayServicesUtil {*;}

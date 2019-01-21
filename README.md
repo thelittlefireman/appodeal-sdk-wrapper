@@ -33,6 +33,8 @@ This project has been built using Jitpack.io
 [![](https://jitpack.io/v/thelittlefireman/appodeal-sdk-wrapper.svg)](https://jitpack.io/#thelittlefireman/appodeal-sdk-wrapper)
 
 Releases available using this repo:
+* 2.5.0.0 (Jan 21, 2019)
+-> com.github.thelittlefireman:appodeal-sdk-wrapper:2.5.0.0
 * 2.4.9.3 (Dec 09, 2018)
 -> com.github.thelittlefireman:appodeal-sdk-wrapper:2.4.9.3
 * 2.4.9.0 (Dec 09, 2018)
