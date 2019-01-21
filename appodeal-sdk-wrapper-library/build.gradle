@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.5.0.0'
+    artifactVersion = '2.5.0.1'
     aarMobVistaVersion = '9.0.0'
 }
 
@@ -19,10 +19,10 @@ android {
         multiDexEnabled true
     }
     defaultPublishConfig "normalRelease"
-    flavorDimensions "default"
+    flavorDimensions "package"
     productFlavors {
-        normal { dimension "default" }
-        optional { dimension "default" }
+        normal { dimension "package" }
+        withOptional { dimension "package" }
     }
 }
 
@@ -34,6 +34,7 @@ allprojects {
             url 'https://maven.google.com/'
         }
         jcenter()
+        maven { url 'https://jitpack.io' }
         flatDir {
             dirs 'libs-aar'
         }
@@ -58,7 +59,7 @@ dependencies {
 
     //Libs folder
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    optionalImplementation fileTree(dir: 'libs-ops', include: ['*.jar'])
+    withOptionalImplementation fileTree(dir: 'libs-ops', include: ['*.jar'])
 
     // --- Native libs ---
     implementation 'com.google.android.gms:play-services-ads:17.1.2'
@@ -80,7 +81,6 @@ dependencies {
     implementation name: "mobvista-$aarMobVistaVersion-videocommon", ext: 'aar'
     implementation name: "mobvista-$aarMobVistaVersion-videojs", ext: 'aar'
     implementation name: 'ogury-3.0.22', ext: 'aar'
-
 }
 
 group='com.github.thelittlefireman'
@@ -96,7 +96,7 @@ if (android.productFlavors.size() > 0) {
 
         artifacts {
             archives(bundleTask.archivePath) {
-                classifier variant.flavorName
+                classifier variant.name.capitalize().replace("Release", "")
                 builtBy bundleTask
                 name = project.name
             }
