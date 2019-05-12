@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.5.3.3'
+    artifactVersion = '2.5.3.4'
     aarMobVistaVersion = '9.8.0'
 }
 
@@ -69,20 +69,20 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.4'
 
     // --- AAR ---
-    /*implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
-    implementation name: "mintegral-$aarMobVistaVersion-alphab", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-common", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-interstitial", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-interstitialvideo", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-mtgdownloads", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-mtgjscommon", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-mtgnative", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-nativeex", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-playercommon", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-reward", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-videocommon", ext: 'aar'
-    implementation group:'com.mintegral.msdk.video', name: "mintegral-$aarMobVistaVersion-videojs", ext: 'aar'
-    implementation name: 'ogury-3.0.36', ext: 'aar'*/
+    implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
+    implementation group: 'com.alphab', name: "mintegral-$aarMobVistaVersion-alphab", ext: 'aar'
+    implementation group: 'com.mintegral.msdk', name: "mintegral-$aarMobVistaVersion-common", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.interstitial', name: "mintegral-$aarMobVistaVersion-interstitial", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.intervideo', name: "mintegral-$aarMobVistaVersion-interstitialvideo", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.mtgdownload', name: "mintegral-$aarMobVistaVersion-mtgdownloads", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.mtgjscommon', name: "mintegral-$aarMobVistaVersion-mtgjscommon", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.mtgnative', name: "mintegral-$aarMobVistaVersion-mtgnative", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.nativex', name: "mintegral-$aarMobVistaVersion-nativeex", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.playercommon', name: "mintegral-$aarMobVistaVersion-playercommon", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.reward', name: "mintegral-$aarMobVistaVersion-reward", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.videocommon', name: "mintegral-$aarMobVistaVersion-videocommon", ext: 'aar'
+    implementation group: 'com.mintegral.msdk.video', name: "mintegral-$aarMobVistaVersion-videojs", ext: 'aar'
+    implementation group: 'io.presage', name: 'ogury-3.0.36', ext: 'aar'
 }
 
 group='com.github.thelittlefireman'
