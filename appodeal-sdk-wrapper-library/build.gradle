@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.5.3.0'
+    artifactVersion = '2.5.3.1'
     aarMobVistaVersion = '9.8.0'
 }
 
