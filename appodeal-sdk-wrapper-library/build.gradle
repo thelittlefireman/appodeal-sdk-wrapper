@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.5.3.2'
+    artifactVersion = '2.5.3.3'
     aarMobVistaVersion = '9.8.0'
 }
 
@@ -60,6 +60,7 @@ dependencies {
     //Libs folder
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation fileTree(dir: 'libs-ops', include: ['*.jar'])
+    implementation fileTree(dir: 'libs-aar', include: ['*.aar'])
 
     // --- Native libs ---
     implementation 'com.google.android.gms:play-services-ads:17.2.0'
@@ -68,7 +69,7 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.4'
 
     // --- AAR ---
-    implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
+    /*implementation 'com.squareup.picasso:picasso:2.5.2' //for Inmobi
     implementation name: "mintegral-$aarMobVistaVersion-alphab", ext: 'aar'
     implementation name: "mintegral-$aarMobVistaVersion-common", ext: 'aar'
     implementation name: "mintegral-$aarMobVistaVersion-interstitial", ext: 'aar'
@@ -80,8 +81,8 @@ dependencies {
     implementation name: "mintegral-$aarMobVistaVersion-playercommon", ext: 'aar'
     implementation name: "mintegral-$aarMobVistaVersion-reward", ext: 'aar'
     implementation name: "mintegral-$aarMobVistaVersion-videocommon", ext: 'aar'
-    implementation name: "mintegral-$aarMobVistaVersion-videojs", ext: 'aar'
-    implementation name: 'ogury-3.0.36', ext: 'aar'
+    implementation group:'com.mintegral.msdk.video', name: "mintegral-$aarMobVistaVersion-videojs", ext: 'aar'
+    implementation name: 'ogury-3.0.36', ext: 'aar'*/
 }
 
 group='com.github.thelittlefireman'
