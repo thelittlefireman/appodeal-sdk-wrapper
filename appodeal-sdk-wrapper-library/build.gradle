@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-    artifactVersion = '2.5.3.1'
+    artifactVersion = '2.5.3.2'
     aarMobVistaVersion = '9.8.0'
 }
 
@@ -15,8 +15,14 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName artifactVersion
-        consumerProguardFiles 'proguard-rules.pro'
+        proguardFiles 'proguard-rules.pro'
         multiDexEnabled true
+    }
+    buildTypes {
+        debug {
+        }
+        release {
+        }
     }
 }
 
